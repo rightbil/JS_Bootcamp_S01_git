@@ -6,6 +6,7 @@ Show the value of admin using alert (must output “John”).
 */
 
 let admin;
-const name= "john";
+const name= "John";
 admin = name;
-alert(name);
+let Y = false;
+console.log(typeof(x));
