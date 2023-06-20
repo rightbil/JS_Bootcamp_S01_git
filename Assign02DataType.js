@@ -33,5 +33,5 @@ console.table(objects)
   printArrayItems(dataTypes);
 
 
-
+// git commit --author="Custom Nmae<email@domain.com>" -m"commit message"
 
