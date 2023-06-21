@@ -22,3 +22,6 @@ console.log(null + 1) // null is as 0 so 1
 console.log(undefined + 1) // undefined with anything is anything
 console.log(" \t \n" - 2) // ask the teacher 
 
+
+
+
