@@ -15,8 +15,8 @@
 // Sakai > Resources > lab helpers > setupGithubRepository.pdf. Be sure to include function calls that test
 // your functions.
 
-// 1.
-
+// Assignment05 - Taken from the pdf file
+// 1. DONE 
 // Write a function, computeSalesCommission that takes a Boolean argument for salaried and
 // number argument for salesAmount. It should return the sales commission based on following
 // rules. First make a defining table for the function.
@@ -49,13 +49,13 @@ function computeSalesCommission(isEmployeeSalaried, salesAmount) {
   return commission;
 }
 
-// console.log("expect 0: ", computeSalesCommission(true, 200)); // ask sami why -1
-// console.log("expect 0: ", computeSalesCommission(false, 200));
-// console.log("expect 3: ", computeSalesCommission(true, 300));
-// console.log("expect 6: ", computeSalesCommission(false, 300));
-// console.log("expect 65: ", computeSalesCommission(true, 3500));
-// console.log("expect 100: ", computeSalesCommission(false, 3500));
-// 2.
+console.log("expect 0: ", computeSalesCommission(true, 200)); // ask sami why -1
+console.log("expect 0: ", computeSalesCommission(false, 200));
+console.log("expect 3: ", computeSalesCommission(true, 300));
+console.log("expect 6: ", computeSalesCommission(false, 300));
+console.log("expect 65: ", computeSalesCommission(true, 3500));
+console.log("expect 100: ", computeSalesCommission(false, 3500));
+// 2. DONE
 // Make a defining table and function that will return the balance of a savings account that
 // compounds interest monthly. Parameters for the function will be:
 // • initial amount
@@ -70,10 +70,10 @@ let compoundInterest = (
   initialAmount *
   Math.pow(1.0 + annualInterestRate / 100.0, numberOfYearsToCompound);
 
-// console.log("expect 110.47", compoundInterest(100, 10, 1)); // as of investor.gov it should be 110
-// console.log("expect 16470.09", compoundInterest(10000, 5, 10)); //and 16288.94 centes
+console.log("expect 110.47", compoundInterest(100, 10, 1)); // as of investor.gov it should be 110
+console.log("expect 16470.09", compoundInterest(10000, 5, 10)); //and 16288.94 centes
 
-// 3
+// 3 DONE
 
 let calcDownpayment = (costOfHouse) => {
   let downpayment = 0;
@@ -87,11 +87,12 @@ let calcDownpayment = (costOfHouse) => {
   return downpayment;
 };
 
-// console.log("expect 2000: ", calcDownpayment(40000));
-// console.log("expect 2500: ", calcDownpayment(50000));
-// console.log("expect 7500: ", calcDownpayment(100000));
-// console.log("expect 25000: ", calcDownpayment(250000));
-// //4
+console.log("expect 2000: ", calcDownpayment(40000));
+console.log("expect 2500: ", calcDownpayment(50000));
+console.log("expect 7500: ", calcDownpayment(100000));
+console.log("expect 25000: ", calcDownpayment(250000));
+
+ //4 Sum is DONE 
 
 console.log("\nQ6- compute the sum of digits in a given interger");
 
@@ -127,9 +128,9 @@ console.log("expect 24:",multDigits(1234));
 console.log("expect 0:",multDigits(102));
 console.log("expect 8:",multDigits(8));
 
-// //5
+//5
 
-// 5. Write a function, convertFahrenheit, that takes an input parameter with a temperature in Fahrenheit
+// Write a function, convertFahrenheit, that takes an input parameter with a temperature in Fahrenheit
 // and returns the temperature in Celsius.
 // console.log("expect 0: ", convertFahrenheit (32));
 // console.log("expect -17.7778: ", convertFahrenheit (0));
@@ -137,7 +138,4 @@ console.log("expect 8:",multDigits(8));
 // console.log("expect 37.7778: ", convertFahrenheit (100));
 // //6
 // Write a function that takes x and y co-ordinates of two points as inputs and returns the distance between these two points based on the formula, d = √( x 2 − x 1 ) 2 + ( y 2 − y 1 ) 2
-
-
-
 // console.log("expect 7.07 : ", calcDistance (0, 0, 5, 5));
