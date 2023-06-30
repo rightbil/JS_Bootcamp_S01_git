@@ -1,22 +1,11 @@
-//Assignment W1D2 Functions
-// First do the readings and complete the following tasks from The JavaScript Language book. Try to
-// complete the answers before looking at the solutions. Implement the coding assignments in VSCode.
-// JavaScript Fundamentals chapter
-// Readings
-// The “switch” statement
-// • Rewrite the “Switch” into an “if”
-// • Rewrite “if” into “switch”
-// Functions
-// • Rewrite the function using “?” or “||”
-// • Function min(a, b)
-// • Function pow(x, n)
-// Programming homeworks
-// Put your solutions for the following into your GitHub course repository according to the instructions in
-// Sakai > Resources > lab helpers > setupGithubRepository.pdf. Be sure to include function calls that test
-// your functions.
+// @author Bililign Alemu
+// Instructor Samuel Belete
+// June 29 , 2023
+// Assignment05 - file name look in the resource folder W1D2
+// Open for comment and optimization
 
-// Assignment05 - Taken from the pdf file
-// 1. DONE 
+// 1. DONE
+
 // Write a function, computeSalesCommission that takes a Boolean argument for salaried and
 // number argument for salesAmount. It should return the sales commission based on following
 // rules. First make a defining table for the function.
@@ -30,16 +19,17 @@
 // • 2% for sales between $300 and $500 (inclusive, and commission on the entire amount)
 // • 3% for sales above $500 (only for the portion above 500 plus the 2% commission on the
 // first 500)
+console.log("problem 1 : ")
 function computeSalesCommission(isEmployeeSalaried, salesAmount) {
   let commission = 0;
-
+  // Salaried Employee
   if (isEmployeeSalaried) {
     if (salesAmount >= 300 && salesAmount <= 500)
       commission = salesAmount * 0.01;
     else commission = 500 * 0.01 + (salesAmount - 500) * 0.02;
   }
 
-  // if employee is not salaried
+  // Employee not salaried
   else {
     if (salesAmount >= 300 && salesAmount < 500)
       commission = salesAmount * 0.02;
@@ -55,13 +45,15 @@ console.log("expect 3: ", computeSalesCommission(true, 300));
 console.log("expect 6: ", computeSalesCommission(false, 300));
 console.log("expect 65: ", computeSalesCommission(true, 3500));
 console.log("expect 100: ", computeSalesCommission(false, 3500));
+
 // 2. DONE
+
 // Make a defining table and function that will return the balance of a savings account that
 // compounds interest monthly. Parameters for the function will be:
 // • initial amount
 // • annual interest rate
 // • number of years to compound
-
+console.log("problem 2 : ")
 let compoundInterest = (
   initialAmount,
   annualInterestRate,
@@ -75,6 +67,7 @@ console.log("expect 16470.09", compoundInterest(10000, 5, 10)); //and 16288.94 c
 
 // 3 DONE
 
+console.log("problem 3 : ")
 let calcDownpayment = (costOfHouse) => {
   let downpayment = 0;
   if (costOfHouse < 50000) downpayment = costOfHouse * 0.05;
@@ -92,10 +85,9 @@ console.log("expect 2500: ", calcDownpayment(50000));
 console.log("expect 7500: ", calcDownpayment(100000));
 console.log("expect 25000: ", calcDownpayment(250000));
 
- //4 Sum is DONE 
+//4 DONE
 
-console.log("\nQ6- compute the sum of digits in a given interger");
-
+console.log("problem 4 : ")
 let sumDigits = (givenNumber) => {
   let remainder;
   let sumOfDigits = 0;
@@ -111,31 +103,42 @@ console.log("expect 10:", sumDigits(1234));
 console.log("expect 3:", sumDigits(102));
 console.log("expect 8:", sumDigits(8));
 
-
 let multDigits = (givenNumber) => {
-    let remainder=1;
-    let sumOfDigits = 1;
-  // Needs correction here 
+  let remainder = 1;
+  let multOfDigits = 1;
+  /*handling single digits */
+  if (givenNumber < 10) return givenNumber;
+  else {
     do {
       remainder = givenNumber % 10;
-      sumOfDigits = sumOfDigits * remainder;
+      multOfDigits = multOfDigits * remainder;
+
       givenNumber = Math.floor(givenNumber / 10); // floor is needed to force integer divisioin
     } while (givenNumber > 9);
-    return (sumOfDigits *= givenNumber);
-  };
+  }
+  return (multOfDigits *= givenNumber);
+};
 
-console.log("expect 24:",multDigits(1234));
-console.log("expect 0:",multDigits(102));
-console.log("expect 8:",multDigits(8));
+console.log("expect 24:", multDigits(1234));
+console.log("expect 0:", multDigits(102));
+console.log("expect 8:", multDigits(8));
 
-//5
+//5 DONE
 
 // Write a function, convertFahrenheit, that takes an input parameter with a temperature in Fahrenheit
 // and returns the temperature in Celsius.
-// console.log("expect 0: ", convertFahrenheit (32));
-// console.log("expect -17.7778: ", convertFahrenheit (0));
-// console.log("expect 100: ", convertFahrenheit (212));
-// console.log("expect 37.7778: ", convertFahrenheit (100));
-// //6
-// Write a function that takes x and y co-ordinates of two points as inputs and returns the distance between these two points based on the formula, d = √( x 2 − x 1 ) 2 + ( y 2 − y 1 ) 2
-// console.log("expect 7.07 : ", calcDistance (0, 0, 5, 5));
+console.log("problem 5 : ")
+convertFahrenheit = (fahrenheit) => ((fahrenheit - 32) * 5) / 9;
+
+console.log("expect 0: ", convertFahrenheit(32));
+console.log("expect -17.7778: ", convertFahrenheit(0));
+console.log("expect 100: ", convertFahrenheit(212));
+console.log("expect 37.7778: ", convertFahrenheit(100));
+
+//6 DONE
+console.log("problem 6 : ")
+// Write a function that takes x and y co-ordinates of two points as inputs and returns the distance between these two points based on the formula,
+//d = √( x 2 − x 1 ) 2 + ( y 2 − y 1 ) 2
+calcDistance = (x1, y1, x2, y2) =>
+  Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+console.log("expect 7.07 : ", calcDistance(0, 0, 5, 5));
